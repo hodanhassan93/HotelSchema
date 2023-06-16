@@ -28,13 +28,10 @@ children int NOT NULL,
 constraint foreign key(guest_Id) REFERENCES guests(guest_id)
 );
 
-
 Create table amenity(
 amenities_Id int primary key,
 amenities_name varchar(20) not null
 );
-
-
 
 create table room(
 room_num int primary key,
