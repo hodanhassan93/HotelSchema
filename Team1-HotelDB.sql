@@ -25,7 +25,7 @@ guest_res_Id int primary key,
 guest_Id int,
 adults int NOT NULL,
 children int NOT NULL,
-constraint foreign key(guest_Id) REFERENCES guests(guest_id)
+constraint foreign key(guest_Id) REFERENCES guests(guest_id) on delete cascade
 );
 
 Create table amenity(
@@ -45,7 +45,7 @@ start_date date NOT NULL,
 end_date date NOT NULL, 
 room_num int,
 total_cost double NOT NULL,
-constraint foreign key(room_num) REFERENCES room(room_num)
+constraint foreign key(room_num) REFERENCES room(room_num) on delete cascade
 );
 
 create table room_amenity(
@@ -59,7 +59,7 @@ CONSTRAINT pk_room_amenities
 create table final_res(
 guest_res_Id int,
 reservation_Id int,
-constraint foreign key(guest_res_Id) REFERENCES guest_res(guest_res_Id),
+constraint foreign key(guest_res_Id) REFERENCES guest_res(guest_res_Id) on delete cascade,
 constraint foreign key(reservation_Id) REFERENCES reservation_details(reservation_Id),
 CONSTRAINT pk_final_res
     	PRIMARY KEY (guest_res_Id, reservation_Id));

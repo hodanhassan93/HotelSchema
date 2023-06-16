@@ -167,3 +167,6 @@ values(100, 200 ),
 (123, 222),
 (124, 223),
 (125, 224);
+
+SET SQL_SAFE_UPDATES = 0;
+delete from guests where name = "Jeremiah Pendergrass";
